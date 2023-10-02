@@ -13,7 +13,10 @@ public class MainClass {
         Cat cat5 = new Cat("Малыш", 8, true);
         Plate plate = new Plate(99);
         plate.info();
-        // cat.eat(plate);
+
+        
+        // cat.eat(plate); // кормление одного котика
+
         System.out.println();
 
         Cat[] cats = new Cat[5];
@@ -29,13 +32,13 @@ public class MainClass {
         for (Cat cati : cats) {
             cati.eat2(plate);
             if (cati.getHungry() == true) {
-                j++;
+                j++; // считаем голодных
                 appetiteSumm = appetiteSumm + cati.getAppetite();
             }
 
         }
 
-        Cat[] cats2 = new Cat[j];
+        Cat[] cats2 = new Cat[j]; //создаем массив голодных
         for (Cat cati : cats) {
             if (cati.getHungry() == true) {
 
@@ -46,10 +49,10 @@ public class MainClass {
         }
 
         System.out.println();
-        plate.addFood(appetiteSumm);
+        plate.addFood(appetiteSumm); // добавляем в тарелку еду
 
-        for (Cat cati2 : cats2) {
-            cati2.eat2(plate);
+        for (Cat cati2 : cats2) { // кормим голодных. 
+            cati2.eat2(plate); 
         }
 
     }
